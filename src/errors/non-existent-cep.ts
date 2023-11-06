@@ -1,8 +1,8 @@
-import { ApplicationError } from "@/protocols";
+import { ApplicationError } from '@/protocols';
 
-export function nonExistentCep(): ApplicationError{
+export function nonExistentCep(): ApplicationError {
   return {
     name: 'nonExistentCep',
-    message:'Cannot find CEP!'
-  }
+    message: 'Cannot find CEP!',
+  };
 }

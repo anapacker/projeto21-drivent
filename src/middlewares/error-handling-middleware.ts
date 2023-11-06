@@ -8,7 +8,11 @@ export function handleApplicationErrors(
   res: Response,
   next: NextFunction,
 ) {
-  if (err.name === 'CannotEnrollBeforeStartDateError' || err.name === 'nonExistentCep') {
+  if (
+    err.name === 'CannotEnrollBeforeStartDateError' ||
+    err.name === 'nonExistentCep' ||
+    err.name === 'nonEnrollementForUser'
+  ) {
     return res.status(httpStatus.BAD_REQUEST).send({
       message: err.message,
     });
