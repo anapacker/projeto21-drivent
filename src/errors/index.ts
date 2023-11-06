@@ -8,4 +8,4 @@ export * from './request-error';
 export * from './invalid-credentials-error';
 export * from './duplicate-email-error';
 export * from './non-existent-cep';
-export * from './nonEnrollmentUser';
+export * from './non-enrollment-user';
