@@ -30,7 +30,7 @@ export function handleApplicationErrors(
     });
   }
 
-  if (err.name === 'InvalidDataError') {
+  if (err.name === 'InvalidDataError' || err.name === 'nonExistentCep' || err.name === 'nonEnrollementForUser') {
     return res.status(httpStatus.BAD_REQUEST).send({
       message: err.message,
     });
