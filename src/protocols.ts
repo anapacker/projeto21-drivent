@@ -25,7 +25,7 @@ export type CEP = {
   cep: string;
 };
 
-export type CreateTickets = Omit<Ticket, 'id' | 'createdAt'  | 'updateAt'>
+export type CreateTickets = Omit<Ticket, 'id' | 'createdAt'  | 'updatedAt'>
 
 export type TicketsInfos = {
   ticketTypeId: number

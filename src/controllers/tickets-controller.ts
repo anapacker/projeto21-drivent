@@ -18,3 +18,11 @@ export async function getTicketById(req: AuthenticatedRequest, res: Response) {
   res.status(httpStatus.OK).send(tickets)
 }
 
+export async function postTicket(req:AuthenticatedRequest, res:Response) {
+  const { userId} = req
+  const {ticketTypeId} = req.body
+
+  const ticket = await ticketsService.createTickets(userId, ticketTypeId)
+  res.status(httpStatus.CREATED).send(ticket)
+}
+
