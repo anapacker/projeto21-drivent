@@ -49,6 +49,11 @@ export function handleApplicationErrors(
       message: err.message,
     });
   }
+  if(err.name === 'PaymentRequired'){
+    return res.status(httpStatus.PAYMENT_REQUIRED).send({
+      message:err.message
+    })
+  }
 
   if (err.hasOwnProperty('status') && err.name === 'RequestError') {
     return res.status((err as RequestError).status).send({
