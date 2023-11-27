@@ -59,4 +59,5 @@ describe("get bookings tests", () => {
       name:'NotFoundError'
     })
   })
+  
 })

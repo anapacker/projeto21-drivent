@@ -26,7 +26,7 @@ export function handleApplicationErrors(
     });
   }
 
-  if (err.name === 'InvalidDataError' || err.name === 'InvalidCEPError') {
+  if (err.name === 'InvalidDataError' || err.name === 'InvalidCEPError' || err.name === 'BadRequest') {
     return res.status(httpStatus.BAD_REQUEST).send({
       message: err.message,
     });

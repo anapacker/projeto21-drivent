@@ -24,3 +24,14 @@ export async function postBooking(req:AuthenticatedRequest, res: Response) {
   const responseBody = {bookingId: booking.id}
   return res.status(httpStatus.OK).send(responseBody)
 }
+
+export async function updateBooking(req:AuthenticatedRequest, res: Response) {
+  const { userId} = req
+  const bookingId = Number(req.params.bookingId)
+  if(!bookingId) return res.sendStatus(httpStatus.BAD_REQUEST)
+
+  const {roomId} = req.body
+  const booking = await bookingService.updateBooking(userId, roomId)
+
+  return res.status(httpStatus.OK).send({bookingId:booking.id})
+}
