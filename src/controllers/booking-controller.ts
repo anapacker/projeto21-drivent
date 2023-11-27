@@ -14,3 +14,13 @@ export async function getBooking(req:AuthenticatedRequest, res: Response) {
   }
   return res.status(httpStatus.OK).send(body)
 }
+
+export async function postBooking(req:AuthenticatedRequest, res: Response) {
+  const {userId} = req
+  const {roomId} = req.body
+
+  const booking = await bookingService.createBooking(roomId, userId)
+
+  const responseBody = {bookingId: booking.id}
+  return res.status(httpStatus.OK).send(responseBody)
+}
