@@ -8,5 +8,6 @@ bookingRouter
   .all("/*", authenticateToken)
   .get('/',getBooking )
   .post('/',validateBody(bookingSchema), postBooking)
+  .put('/:bookingId')
 
 export {bookingRouter}

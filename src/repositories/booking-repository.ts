@@ -38,6 +38,18 @@ async function findRoomById(roomId:number) {
   return room
 }
 
+// async function upsert(roomId:number, bookingId:number) {
+//   return prisma.room.upsert({
+//     where:{
+//       id:roomId
+//     },
+//     include:{
+//       Booking:true,
+//     },
+//     update:{id:bookingId}
+//   })
+  
+// }
 export const bookingRepository = {
   findBookingWithRoomByUserId,
   createBooking,
